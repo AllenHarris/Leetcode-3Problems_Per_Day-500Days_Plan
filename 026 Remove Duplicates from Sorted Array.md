@@ -61,14 +61,17 @@ for (int i = 0; i < len; i++) {
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        if(nums.empty())
+        //特殊条件，当数组为空时
+        if(nums.empty()){
             return 0;
+        }
+        //数组不为空时
         int index = 0;
         for(int i=1; i < nums.size(); ++i){
             if(nums[index] != nums[i])
                 nums[++index] = nums[i];
         }
-        return index+1;
+        return index+1;		//index从0开始、且遍历是从1kai，返回长度时要+1
     }
 };
 ````
